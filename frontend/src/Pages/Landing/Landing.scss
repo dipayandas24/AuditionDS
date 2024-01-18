@@ -40,7 +40,7 @@
   }
 
   .centre-main {
-    font-family: $fontB;
+    font-family: "PpMoriSM";
     font-size: 50px;
     display: flex;
     flex-direction: column;
@@ -57,12 +57,13 @@
      background-color: white;
      animation-name: example;
      animation-duration: 2s;
-}
+    }
 
-@keyframes example {
-  from {width: 10px;}
-  to {width: 1500px;}
-}
+    @keyframes example {
+      from {width: 10px;}
+      to {width: 1500px;}
+    }
+
   }
 }
 

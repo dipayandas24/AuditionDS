@@ -49,6 +49,12 @@ const Landing = () => {
 
   return (
     <div className="landing">
+      <div className="nav-menu-button">
+        <div className="hambutton">
+          <div className="styles_burger__ah8ak"></div>
+        </div>
+      </div>
+
       <div className="cursor">
         <div className="cursor__ball cursor__ball--big">
           <svg height="30" width="30">
@@ -69,10 +75,36 @@ const Landing = () => {
           <p className="description">announces</p>
           <a className="hoverable">the Audition</a>
         </div>
+
         <div className="content-wrapper">
            <hr  className='bar'/>
         </div>
       </div>
+
+     {/* Arrow Section */}
+      {/* <div className="arrow-container">
+        <div className="flex self-center flex-row relative h-[230px] w-[230px] justify-center items-center circcnt">
+          <svg className="circcirc absolute" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100">
+            <circle id="test" stroke="white" strokeWidth="2" fill="none" cx="50" cy="50" r="40"></circle>
+          </svg>
+          <svg className="circcirc absolute" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100">
+            <circle id="test" stroke="white" strokeWidth="2" fill="none" cx="50" cy="50" r="40"></circle>
+          </svg>
+          <img
+            alt="hero pointer down circpointer"
+            loading="lazy"
+            width="42"
+            height="42"
+            decoding="async"
+            data-nimg="1"
+            className="xs:w-[29px] w-[35px]"
+            style={{ color: 'transparent' }}
+            src="../../public/assets/arrow-199-64.png"
+          />
+        </div>
+      </div> */}
+      
+
     </div>
   );
 };
