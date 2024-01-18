@@ -1,15 +1,15 @@
 $fontB: 'PpMoriSM', sans-serif;
-$fontM: 'PpMori', sans-serif;
+$font: 'PpMori';
 
 
 
-@font-face {
+  @font-face {
     font-family: 'PpMoriSM';
     src: local('PpMoriSM'), url('../public/fonts/PPMori-SemiBold.otf') format('otf');
     font-weight: lighter;
   }
 
-@font-face {
+  @font-face {
     font-family: 'PpMori';
     src: local('PpMori'), url('../public/fonts/PPMori-Regular.otf') format('otf');
-}  
+  }  
