@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { TweenMax } from 'gsap';
+import "../Landing/Landing.scss"
 
 const Landing = () => {
   useEffect(() => {
@@ -7,14 +8,13 @@ const Landing = () => {
     const smallBall = document.querySelector('.cursor__ball--small');
     const hoverables = document.querySelectorAll('.hoverable');
 
-    
     document.body.addEventListener('mousemove', onMouseMove);
+
     for (let i = 0; i < hoverables.length; i++) {
       hoverables[i].addEventListener('mouseenter', onMouseHover);
       hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
     }
 
-    
     function onMouseMove(e) {
       TweenMax.to(bigBall, 0.4, {
         x: e.pageX - 15,
@@ -26,7 +26,6 @@ const Landing = () => {
       });
     }
 
-    
     function onMouseHover() {
       TweenMax.to(bigBall, 0.3, {
         scale: 4,
@@ -39,7 +38,6 @@ const Landing = () => {
       });
     }
 
-    
     return () => {
       document.body.removeEventListener('mousemove', onMouseMove);
       for (let i = 0; i < hoverables.length; i++) {
@@ -65,16 +63,12 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="left">
-        <h1>Hello</h1>
-        <p>Check out this link:</p>
-        <a className="hoverable">Hover meh</a>
-      </div>
-
-      <div className="right">
-        <h1>Hello</h1>
-        <p>Check out this link:</p>
-        <a className="hoverable">This is DS</a>
+      <div className="centre-main">
+        <div className="content-wrapper">
+          <h1 className="header">The Debating Society</h1>
+          <p className="description">announces</p>
+          <a className="hoverable">the Audition</a>
+        </div>
       </div>
     </div>
   );
