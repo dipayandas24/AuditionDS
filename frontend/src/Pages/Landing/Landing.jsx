@@ -69,6 +69,9 @@ const Landing = () => {
           <p className="description">announces</p>
           <a className="hoverable">the Audition</a>
         </div>
+        <div className="content-wrapper">
+           <hr  className='bar'/>
+        </div>
       </div>
     </div>
   );

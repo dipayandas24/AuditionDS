@@ -43,12 +43,26 @@
     font-family: $fontB;
     font-size: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center; 
 
     .content-wrapper {
       text-align: center; 
     }
+    .bar {
+      margin-top: 200px;
+      width: 1500px;
+      height: 1px;
+     background-color: white;
+     animation-name: example;
+     animation-duration: 2s;
+}
+
+@keyframes example {
+  from {width: 10px;}
+  to {width: 1500px;}
+}
   }
 }
 
