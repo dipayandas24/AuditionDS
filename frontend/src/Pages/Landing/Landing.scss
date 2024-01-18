@@ -14,7 +14,7 @@
   .header, .description, .hoverable {
     color: #fff;
     text-align: center;
-    font-family: $fontB;
+    font-family: $font;
   }
 
   .description {
@@ -40,7 +40,7 @@
   }
 
   .centre-main {
-    font-family: "PpMoriSM";
+    font-family: 'PpMori';
     font-size: 50px;
     display: flex;
     flex-direction: column;
