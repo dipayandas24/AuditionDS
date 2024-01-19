@@ -8,11 +8,11 @@ const Loader = ({ onFinishLoading }) => {
     const textWrapper = document.querySelector('.text-wrapper');
     const dAndS = document.querySelector('.d-and-s');
 
-    // Initial Animation
+    
     TweenMax.fromTo(debatingSociety, 2, { opacity: 0 }, { opacity: 1, ease: Power3.easeInOut });
     TweenMax.to(textWrapper, 1, { y: '-100%', delay: 2, onComplete: () => onFinishLoading() });
     
-    // D and S Animation
+    
     TweenMax.from(dAndS, 1, { y: '100%', delay: 3 });
     TweenMax.to(dAndS, 1, { x: '0%', y: '0%', delay: 4, onComplete: () => onFinishLoading() });
   }, [onFinishLoading]);

@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Loader from './Components/Loader/Loader';
@@ -12,11 +11,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Simulating an asynchronous task, e.g., API call or data loading
     const simulateLoading = () => {
       setTimeout(() => {
-        onFinishLoading(); // Call the onFinishLoading function when loading is complete
-      }, 5000); // Adjust the time as needed
+        onFinishLoading(); 
+      }, 5000);
     };
 
     simulateLoading();
