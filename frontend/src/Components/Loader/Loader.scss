@@ -1,0 +1,40 @@
+@import "../../styles.scss";
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #010101;
+  z-index: 9999;
+
+  .debating-society {
+    font-family: $fontB;
+    font-size: 2em;
+    color: #fff;
+  }
+
+  .text-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 1em;
+
+    .d-and-s {
+      font-family: $fontB;
+      font-size: 3em;
+      color: #fff;
+      display: inline-block;
+
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        opacity: 0.8;
+      }
+    }
+  }
+}
