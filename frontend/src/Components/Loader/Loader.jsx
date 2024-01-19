@@ -1,26 +1,44 @@
-import React, { useEffect } from 'react';
-import { TweenMax, Power3 } from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import gsap, { Power3, TimelineMax } from 'gsap';
 import "./Loader.scss";
 
 const Loader = ({ onFinishLoading }) => {
-  useEffect(() => {
-    const debatingSociety = document.querySelector('.debating-society');
-    const textWrapper = document.querySelector('.text-wrapper');
-    const dAndS = document.querySelector('.d-and-s');
+  const root = useRef(null);
+  const containerRef = useRef(null);
+  const isVisible = useRef(false);
+
+  const animate = () => {
+    const tl = new TimelineMax();
+    const t2 = new TimelineMax();
+    const t3 = new TimelineMax();
+    const t4 = new TimelineMax();
 
     
-    TweenMax.fromTo(debatingSociety, 2, { opacity: 0 }, { opacity: 1, ease: Power3.easeInOut });
-    TweenMax.to(textWrapper, 1, { y: '-100%', delay: 2, onComplete: () => onFinishLoading() });
+    tl.fromTo(root.current, 2, { opacity: 0, y: '100%' }, { opacity: 1, y: '0%', ease: Power3.easeInOut });
+
     
+    tl.to(containerRef.current, 1, { y: '-100%', delay: 2 })
+      .to(root.current, 1, { opacity: 0, y: '-100%', ease: Power3.easeInOut }, '-=1')
+      .from(containerRef.current, 1, { y: '100%' }, '-=1') 
     
-    TweenMax.from(dAndS, 1, { y: '100%', delay: 3 });
-    TweenMax.to(dAndS, 1, { x: '0%', y: '0%', delay: 4, onComplete: () => onFinishLoading() });
-  }, [onFinishLoading]);
+
+    tl.to(containerRef.current, 1, { x: '0%', y: '0%', ease: Power3.easeInOut }, '-=0.5') 
+
+   
+
+    tl.to(containerRef.current, 0.5, { x: '10%', ease: Power3.easeInOut }) 
+    tl.to(containerRef.current, 0.5, { x: '0%', onComplete: () => onFinishLoading() }); 
+    isVisible.current = true;
+  };
+
+  useEffect(() => {
+    animate();
+  }, []);
 
   return (
     <div className="loader">
-      <div className="debating-society">Debating Society</div>
-      <div className="text-wrapper">
+      <div className="debating-society" ref={root}>Debating Society</div>
+      <div className="text-wrapper" ref={containerRef}>
         <div className="d-and-s">D<span>&</span>S</div>
       </div>
     </div>

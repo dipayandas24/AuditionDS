@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useLayoutEffect, useRef } from 'react';
 import { TweenMax } from 'gsap';
 import "../Landing/Landing.scss";
+import Button from "./Button";
 import styles from "./audition.module.scss";
 import work from "../../Media/work.jpg";
 import group from "../../Media/group.jpg";

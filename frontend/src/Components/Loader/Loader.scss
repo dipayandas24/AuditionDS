@@ -15,20 +15,21 @@
 
   .debating-society {
     font-family: $fontB;
-    font-size: 2em;
+    font-size: 30px;
     color: #fff;
   }
 
   .text-wrapper {
     overflow: hidden;
     width: 100%;
-    height: 1em;
+    height: 30px;
 
     .d-and-s {
       font-family: $fontB;
-      font-size: 3em;
+      font-size: 30px;
       color: #fff;
       display: inline-block;
+      align-items: center;
 
       span {
         display: inline-block;

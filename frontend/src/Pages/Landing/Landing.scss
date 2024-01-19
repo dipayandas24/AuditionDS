@@ -6,13 +6,15 @@
   background: #010101;
   cursor: none;
   margin: 0;
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   
 
   .header, .description, .hoverable {
     color: #fff;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-family: $font;
   }
