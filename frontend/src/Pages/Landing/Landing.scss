@@ -2,16 +2,17 @@
 
 
 .landing {
-  height: 100vh;
   background: #010101;
   cursor: none;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
   margin: 0;
-  
   justify-content: center;
   align-items: center;
   
 
-  .header, .description, .hoverable {
+  .header, .description{
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -19,8 +20,17 @@
     font-family: $font;
   }
 
+  .hoverable {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "montserrat";
+    font-size: 70px;
+  }
+
   .description {
-    border-bottom: 2px solid #fff;
+    // border-bottom: 2px solid #fff;
     padding: 10px 0;
     margin-top: 25px;
   }
@@ -42,8 +52,9 @@
   }
 
   .centre-main {
+    height: 100vh;
     font-family: 'PpMori';
-    font-size: 50px;
+    font-size: clamp(16px, 7vw, 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,17 +80,17 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .centre-main {
-    font-family: $fontB;
-    font-size: 20px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+// @media screen and (max-width: 480px) {
+//   .centre-main {
+//     font-family: $fontB;
+//     font-size: 20px !important;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center; 
 
-    .content-wrapper {
-      text-align: center; 
-    }
-  }
-}
+//     .content-wrapper {
+//       text-align: center; 
+//     }
+//   }
+// }
 

@@ -38,9 +38,9 @@ const Loader = ({ onFinishLoading }) => {
   return (
     <div className="loader">
       <div className="debating-society" ref={root}>Debating Society</div>
-      <div className="text-wrapper" ref={containerRef}>
-        <div className="d-and-s">D<span>&</span>S</div>
-      </div>
+      {/* <div className="text-wrapper" ref={containerRef}>
+        <div className="d-and-s">D<span></span>S</div>
+      </div> */}
     </div>
   );
 };

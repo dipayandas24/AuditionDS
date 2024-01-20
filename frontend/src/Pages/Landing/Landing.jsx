@@ -299,8 +299,8 @@ const Landing = () => {
       <div className="centre-main">
         <div className="content-wrapper">
           <h1 className="header">The Debating Society</h1>
-          <p className="description">announces</p>
-          <a className="hoverable">the Audition</a>
+          {/* <p className="description">announces</p> */}
+          <a className="hoverable">Audition 2024</a>
         </div>
 
         <div className="content-wrapper">
