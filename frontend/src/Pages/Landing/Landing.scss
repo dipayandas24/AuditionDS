@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-family: $font;
+    font-family: "PpMori";
   }
 
   .hoverable {
@@ -26,13 +26,45 @@
     flex-direction: column;
     text-align: center;
     font-family: "montserrat";
-    font-size: 70px;
+    font-size: 120px;
   }
 
   .description {
     // border-bottom: 2px solid #fff;
     padding: 10px 0;
     margin-top: 25px;
+  }
+  
+  .debating,
+  .society {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: "PpMori";
+    opacity: 0;
+  }
+
+  .society {
+    text-align: right;
+  }
+
+
+  .register-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;
+  }
+
+  .section-indicator {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: "montserrat";
+    font-size: 14px;
+    opacity: 0;
   }
 
   .cursor {
@@ -53,8 +85,8 @@
 
   .centre-main {
     height: 100vh;
-    font-family: 'PpMori';
-    font-size: clamp(16px, 7vw, 40px);
+    font-family: "PpMori";
+    font-size: clamp(16px, 7vw, 50px);
     display: flex;
     flex-direction: column;
     justify-content: center;

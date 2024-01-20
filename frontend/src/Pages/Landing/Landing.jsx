@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useLayoutEffect, useRef } from 'react';
-import { TweenMax } from 'gsap';
+import { TweenMax, TimelineMax, Power3 } from 'gsap';
 import "../Landing/Landing.scss";
 import Button from "./Button";
 import styles from "./audition.module.scss";
@@ -18,14 +18,16 @@ const Landing = () => {
     const bigBall = document.querySelector('.cursor__ball--big');
     const smallBall = document.querySelector('.cursor__ball--small');
     const hoverables = document.querySelectorAll('.hoverable');
-
+    const debatingSocietyText = document.querySelector('.debating');
+    const societyText = document.querySelector('.society');
+  
     document.body.addEventListener('mousemove', onMouseMove);
-
+  
     for (let i = 0; i < hoverables.length; i++) {
       hoverables[i].addEventListener('mouseenter', onMouseHover);
       hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
     }
-
+  
     function onMouseMove(e) {
       TweenMax.to(bigBall, 0.4, {
         x: e.pageX - 15,
@@ -36,19 +38,26 @@ const Landing = () => {
         y: e.pageY - 7,
       });
     }
-
+  
     function onMouseHover() {
       TweenMax.to(bigBall, 0.3, {
         scale: 4,
       });
     }
-
+  
     function onMouseHoverOut() {
       TweenMax.to(bigBall, 0.3, {
         scale: 1,
       });
     }
-
+  
+    // Animation for The Debating Society
+    const debatingTimeline = new TimelineMax();
+    debatingTimeline.fromTo(debatingSocietyText, 2, { opacity: 0, x: -50 }, { opacity: 1, x: 0, ease: Power3.easeInOut });
+  
+    // Animation for Society
+    debatingTimeline.fromTo(societyText, 2, { opacity: 0, x: 50 }, { opacity: 1, x: 0, ease: Power3.easeInOut }, '-=2');
+  
     return () => {
       document.body.removeEventListener('mousemove', onMouseMove);
       for (let i = 0; i < hoverables.length; i++) {
@@ -57,6 +66,7 @@ const Landing = () => {
       }
     };
   }, []);
+  
 
   function WhyDSCard({ src, text, rotate }) {
     if (window.innerWidth < 700) {
@@ -298,15 +308,69 @@ const Landing = () => {
 
       <div className="centre-main">
         <div className="content-wrapper">
-          <h1 className="header">The Debating Society</h1>
-          {/* <p className="description">announces</p> */}
+          <h1 className="header">
+            <span className="debating">The Debating</span>
+            <br />
+            <span className="society">Society</span>
+          </h1>
           <a className="hoverable">Audition 2024</a>
         </div>
 
-        <div className="content-wrapper">
-           <hr  className='bar'/>
+        <div className="content-wrapper button-wrapper">
+          <a className="button view-work-button">View my work</a>
+          <a className="button arrow-button">
+            <svg
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 19l-7-7 7-7" />
+            </svg>
+          </a>
+          <a className="button arrow-button">
+            <svg
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 19l-7-7 7-7" />
+            </svg>
+          </a>
+          <a className="button arrow-button">
+            <svg
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 19l-7-7 7-7" />
+            </svg>
+          </a>
         </div>
-      </div>
+
+        <div className="content-wrapper register-btn">
+          <a className="button">Register Now</a>
+        </div>
+
+        <div className="content-wrapper">
+          <hr className="bar" />
+        </div>
+    </div>
+
 
      {/* Arrow Section */}
       {/* <div className="arrow-container">
